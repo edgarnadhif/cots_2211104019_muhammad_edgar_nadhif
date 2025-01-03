@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  get: ^4.6.6
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +18,38 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/img/onboarding-1.png
+    - assets/img/onboarding-2.png
+    - assets/img/onboarding-3.png
+    - assets/img/gojeklogo.png
+    - assets/img/bahasa.png
+  fonts:
+    - family: SFProText
+      fonts:
+        - asset: assets/fonts/SF-Pro-Text-Regular.otf
+          weight: 400
+        - asset: assets/fonts/SF-Pro-Text-Semibold.otf
+          weight: 600
+        - asset: assets/fonts/SF-Pro-Text-Bold.otf
+          weight: 700
+        - asset: assets/fonts/SF-Pro-Text-Medium.otf
+          weight: 500
+        - asset: assets/fonts/SF-Pro-Text-Light.otf
+          weight: 300
+        - asset: assets/fonts/SF-Pro-Text-Heavy.otf
+          weight: 800
+    - family: SFProTextItalic
+      fonts:
+        - asset: assets/fonts/SF-Pro-Text-RegularItalic.otf
+          style: italic
+        - asset: assets/fonts/SF-Pro-Text-SemiboldItalic.otf
+          style: italic
+        - asset: assets/fonts/SF-Pro-Text-BoldItalic.otf
+          style: italic
+        - asset: assets/fonts/SF-Pro-Text-MediumItalic.otf
+          style: italic
+        - asset: assets/fonts/SF-Pro-Text-LightItalic.otf
+          style: italic
+        - asset: assets/fonts/SF-Pro-Text-HeavyItalic.otf
+          style: italic
