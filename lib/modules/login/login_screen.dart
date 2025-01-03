@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cots_2211104019_muhammad_edgar_nadhif/utils/design_system/color.dart';
+import 'package:cots_2211104019_muhammad_edgar_nadhif/modules/main/main_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -95,7 +96,10 @@ class LoginPage extends StatelessWidget {
             const Spacer(),
             ElevatedButton(
               onPressed: () {
-                // Tambahkan aksi untuk tombol lanjutkan
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MainPage()),
+                );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.standardGreen,
