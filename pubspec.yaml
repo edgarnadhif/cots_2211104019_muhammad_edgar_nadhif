@@ -23,7 +23,16 @@ flutter:
     - assets/img/onboarding-2.png
     - assets/img/onboarding-3.png
     - assets/img/gojeklogo.png
-    - assets/img/bahasa.png
+    - assets/img/go-pulsa.png
+    - assets/img/Go-ride.png
+    - assets/img/Go-car.png
+    - assets/img/Go-food.png
+    - assets/img/Go-send.png
+    - assets/img/Go-mart.png
+    - assets/img/Go-club.png
+    - assets/img/card-1.png
+    - assets/img/card-2.png
+    - assets/img/card-3.png
   fonts:
     - family: SFProText
       fonts:

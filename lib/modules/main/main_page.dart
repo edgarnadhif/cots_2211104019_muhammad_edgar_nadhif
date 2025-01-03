@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cots_2211104019_muhammad_edgar_nadhif/utils/design_system/color.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -63,9 +62,11 @@ class MainPage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: const [
-                    _GopayIcon(icon: Icons.add, label: "Top Up"),
-                    _GopayIcon(icon: Icons.payment, label: "Pay"),
-                    _GopayIcon(icon: Icons.explore, label: "Explore"),
+                    _GopayIcon(
+                        image: 'assets/img/go-pulsa.png', label: "Top Up"),
+                    _GopayIcon(image: 'assets/img/Go-ride.png', label: "Pay"),
+                    _GopayIcon(
+                        image: 'assets/img/Go-send.png', label: "Explore"),
                   ],
                 ),
               ],
@@ -79,36 +80,55 @@ class MainPage extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             children: const [
-              _ServiceIcon(icon: Icons.motorcycle, label: "GoRide"),
-              _ServiceIcon(icon: Icons.local_dining, label: "GoFood"),
-              _ServiceIcon(icon: Icons.shopping_cart, label: "GoMart"),
-              _ServiceIcon(icon: Icons.delivery_dining, label: "GoSend"),
-              _ServiceIcon(icon: Icons.local_taxi, label: "GoCar"),
-              _ServiceIcon(icon: Icons.local_offer, label: "Promo"),
-              _ServiceIcon(icon: Icons.more_horiz, label: "More"),
+              _ServiceIcon(image: 'assets/img/Go-ride.png', label: "GoRide"),
+              _ServiceIcon(image: 'assets/img/Go-car.png', label: "GoCar"),
+              _ServiceIcon(image: 'assets/img/Go-food.png', label: "GoFood"),
+              _ServiceIcon(image: 'assets/img/Go-send.png', label: "GoSend"),
+              _ServiceIcon(image: 'assets/img/go-pulsa.png', label: "GoPulsa"),
+              _ServiceIcon(image: 'assets/img/Go-mart.png', label: "GoMart"),
+              _ServiceIcon(image: 'assets/img/Go-club.png', label: "GoClub"),
+              _ServiceIcon(image: 'assets/img/lainnya.png', label: "More"),
             ],
           ),
 
           const SizedBox(height: 20),
 
           // Promos Section
-          const Text(
-            "Restos near me",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(30),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.2),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                ),
+              ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(
+                  8.0), // You can adjust the padding values here
+              child: const Text(
+                "Restos near me",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
           ),
           const SizedBox(height: 10),
           _PromoCard(
-            imageUrl: 'assets/img/promo1.png',
+            imageUrl: 'assets/img/card-1.png',
             title: "Makin Seru",
             description: "Aktifkan sambungkan Gopay di Tokopedia",
           ),
           _PromoCard(
-            imageUrl: 'assets/img/promo2.png',
+            imageUrl: 'assets/img/card-1.png',
             title: "Makin Seru",
             description: "Sambungkan akun ke Tokopedia, banyak untung!",
           ),
           _PromoCard(
-            imageUrl: 'assets/img/promo3.png',
+            imageUrl: 'assets/img/card-1.png',
             title: "Bayar Apa Aja",
             description: "Lebih hemat pakai Gopay!",
           ),
@@ -135,16 +155,16 @@ class MainPage extends StatelessWidget {
 }
 
 class _GopayIcon extends StatelessWidget {
-  final IconData icon;
+  final String image;
   final String label;
 
-  const _GopayIcon({required this.icon, required this.label});
+  const _GopayIcon({required this.image, required this.label});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Icon(icon, color: Colors.white, size: 30),
+        Image.asset(image, height: 40, width: 40), // Increased size
         const SizedBox(height: 5),
         Text(label, style: const TextStyle(color: Colors.white)),
       ],
@@ -153,21 +173,17 @@ class _GopayIcon extends StatelessWidget {
 }
 
 class _ServiceIcon extends StatelessWidget {
-  final IconData icon;
+  final String image;
   final String label;
 
-  const _ServiceIcon({required this.icon, required this.label});
+  const _ServiceIcon({required this.image, required this.label});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        CircleAvatar(
-          radius: 25,
-          backgroundColor: Colors.grey[200],
-          child: Icon(icon, color: Colors.green),
-        ),
+        Image.asset(image, height: 40, width: 40), // Increased size
         const SizedBox(height: 5),
         Text(label, style: const TextStyle(fontSize: 12)),
       ],
